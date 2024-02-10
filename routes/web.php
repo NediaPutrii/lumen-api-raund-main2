@@ -14,7 +14,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return ["Hello Hai..!!!"];
+    return ["Hello Hai ini repo kedua..!!!"];
 });
 
 $router->post('/login', 'AuthController@login');
