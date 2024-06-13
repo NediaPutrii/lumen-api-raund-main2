@@ -1,0 +1,154 @@
+<?php
+    // Bilangan Ganjil Genap
+    function ganjilgenap(){
+        for($i=0; $i<=100; $i++){
+            if($i%2==0){
+                echo $i. ' ';
+            }else{
+                echo $i. ' ';
+            }
+        }
+    }
+    // echo ganjilgenap();
+
+    //Bilangan Prima
+    function prima(){
+        for ($i=1;$i<=10;$i++){
+            $cek = 0;
+            for($j=1;$j<=$i;$j++){
+                if($i % $j==0){
+                   $cek++;
+                }
+            }
+
+            if($cek==2){
+                echo $i. ' ';
+            }
+        }
+    }
+    // echo prima();
+
+    //Fungsi bilangan fibonacci
+    function fibonacci(){
+        $a = 0;
+        $b = 1;
+        $c = 0;
+        for($i=0; $i<=10; $i++){
+            echo $c. ',';
+            $a = $b;
+            $b = $c;
+            $c = $a+$b;
+        }
+    }
+    //echo fibonacci();        
+
+    //fugsi menampilkan isi array yang genap menggunakan for
+    function arr(){
+        $array = [2,4,5,7,8,13,14,15,17,18,21,24,27];
+        for($i=0;$i<count($array); $i++){
+            if($array[$i%2==0]){
+                echo $array[$i], ' ';
+            }
+        }
+    }
+    // echo arr();
+
+    //Menampilkan bilangan genap dan ganjil dari array
+    function arrayGanGen(){
+        $array = [2,3,5,6,7,9,10,13,14,15,16,18,19,20];
+        $arrayGen = [];
+        $arrayGan = [];
+
+        for($i=0; $i<count($array);$i++){
+            if($array[$i]%2==0){
+                array_push($arrayGen, $array[$i]);
+            }else{
+                array_push($arrayGan, $array[$i]);
+            }    
+                    
+        }
+        echo 'Genap : '. join(',', $arrayGen)."\n";    
+        echo 'Ganjil : '.join(',', $arrayGan). "\n";
+        $merge = array_merge($arrayGen, $arrayGan);
+        echo '<pre>'; print_r($merge);
+        
+    }
+    // arrayGanGen();
+
+    //Fungsi menampilkan array genap dari belakang lalu masukkan ke array baru
+    function genapBelakang(){
+        $array = [2,3,4,5,6,7,8,9,10,11,12,14];
+        $arrayGen = [];
+        $arrayGan = [];
+        
+        for($i=count($array)-1; $i>=0; $i--){
+            if($array[$i]%2==0){
+                array_push($arrayGen, $array[$i]);
+            }else{
+                array_push($arrayGan, $array[$i]);
+            }
+        }
+        echo 'Genap : '. join(',', $arrayGen)."\n";    
+        echo 'Ganjil : '.join(',', $arrayGan). "\n";
+
+    }
+    // genapBelakang();
+
+    //Fungsi mengurutkan isi array
+    function urut(){
+        $array = [2,3,4,19,6,20,21,9,10,11,12,14];
+        for($i=0; $i<count($array); $i++){
+            for($j=$i+1; $j<count($array); $j++){
+                if($array[$i]>$array[$j]){
+                    $tmp = $array[$i];
+                    $array[$i] = $array[$j];
+                    $array[$j] = $tmp;
+                }
+            }
+        }
+        echo join(',', $array);
+    }
+    // urut();
+
+    //Fungsi menampilkan array >10 dan diurutkan
+    function array10(){
+        $array = [2,3,4,19,6,20,21,9,10,11,12,14];  
+        $array10 = [];
+        for($i=0; $i<count($array);$i++){
+            if($array[$i]>10){
+                array_push($array10, $array[$i]);
+            }
+        }
+        
+        //diurutkan
+        for($j=0; $j<count($array10); $j++){
+            for($x=$j+1; $x<count($array10);$x++){
+                if($array10[$j]>$array10[$x]){
+                    $temp = $array10[$j];   
+                    $array10[$j] = $array10[$x];
+                    $array10[$x] = $temp;
+                }
+            }
+        }
+       echo join(',', $array10). "\n";
+       echo count($array10)."\n";
+       echo array_sum($array10);
+    }
+    // array10();
+
+    //Fungsi menghapus nilai yang lebih dari 10 dari dalam array
+    function hapus10(){
+        $array = [2,3,4,19,6,20,21,9,10,11,12,14];  
+        $array10 = [];
+        for($i=0; $i<count($array);$i++){
+            if($array[$i]<10){
+                array_push($array10, $array[$i]);
+            }
+        }
+        echo join(',', $array10);
+    }
+    hapus10();   
+
+  
+
+?>
