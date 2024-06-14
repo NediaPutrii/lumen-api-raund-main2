@@ -149,6 +149,32 @@
     }
     hapus10();   
 
+
+
+    // fizzbuzz
+    function fizbuzz(){
+        for($i=0; $i<=10; $i++){
+            if($i%2==0){
+                echo $i. ' ';
+            }else{
+                echo ' fizzbuzz ';
+            }
+        }
+    }
+    // fizbuzz();
+
+    //Fungsi mengunset nilai 3 dari array
+    function unsetnilai(){
+        $array = [1,2,3,4,5];
+        $cari = array_search(3, $array);
+
+        if($cari == true){
+            unset($array[$cari]);
+        }
+        echo join(', ', $array);
+    }
+    // unsetnilai();
+
   
 
 ?>
